@@ -1,10 +1,15 @@
 
 import './App.css';
+import Contact from './components/contact';
 
 function App() {
   return (
     <div className="App">
-      hi
+      
+        <Contact />
+        
+      
+
     </div>
   );
 }
