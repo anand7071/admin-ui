@@ -10,12 +10,22 @@ const Contact = () => {
     const [filterData,setfilterData]= useState([])
     const inputele = useRef(" ")
     const limit = useRef(10)
-    
+    const [page,setPage]= useState(1);
+    const [pagination,setPagination] = useState([])
+    const numberOfPage = Math.ceil(data.length/limit)
+    const array1 = []
+    for(let i=1;i<=numberOfPage;i++){
+        array1.push(i)
+    }
+    const [paginationArray,setPaginationArray]= useState([])
+    setPaginationArray(array1)
+
+
     
       useEffect(()=>{
         var config = {
             method: 'get',
-            url: `https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json?limit=${limit}`,
+            url: `http://localhost:5000/users?_page=${page}&_limit=${limit}`,
           };
           
           axios(config)
@@ -26,7 +36,7 @@ const Contact = () => {
           .catch(function (error) {
             console.log(error);
           });
-          
+          //console.log(pagination)
 
           
 
@@ -98,7 +108,13 @@ const Contact = () => {
                     })
                 }
             </table>
-            
+            {/* <div style={{display:"flex"}}>
+                {paginationArray.map((item)=>{
+                    return <>
+                        <button>{item}</button>
+                    </>
+                })}
+            </div> */}
         </>
     )
 }
