@@ -1,15 +1,11 @@
 .App {
-  width: 70%;
-  margin: auto;
   text-align: center;
-  background-color: blanchedalmond;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9em;
 }
-input{
-  width: 100%;
-  border: 1px solid black;
-}
-.table{
-  width: 100%;
-  border-collapse: collapse;
-  border: 1px solid black;
+
+.search {
+  width: 50vw;
+  padding: 1vh 0 1vh 1vw;
+  margin-bottom: 1vh;
 }
