@@ -2,14 +2,11 @@
 import './App.css';
 import Contact from './components/contact';
 
+
 function App() {
   return (
     <div className="App">
-      
-        <Contact />
-        
-      
-
+      <Contact/>
     </div>
   );
 }
